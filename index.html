@@ -6,16 +6,46 @@
   <meta name="description" content="Portfolio site of Sarath Menon C">
   <meta name="author" content="Sarath Menon C">
   <title>Sarath Menon C</title>
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.css" rel="stylesheet">
+  <!-- Bootstrap 3 core CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS for the 'One Page Wonder' Template -->
   <link href="css/one-page-wonder.css" rel="stylesheet">
+  <style>
+    /* Add this to customize navbar background color */
+    .navbar-inverse {
+      background-color: #222; /* dark background */
+      border-color: #080808;
+    }
+    .navbar-inverse .navbar-brand, 
+    .navbar-inverse .navbar-nav>li>a {
+      color: #9d9d9d;
+    }
+    /* Optional: text hover */
+    .navbar-inverse .navbar-nav>li>a:hover,
+    .navbar-inverse .navbar-brand:hover {
+      color: white;
+    }
+    /* Adjust image size if needed */
+    .featurette-image {
+      max-width: 150px;
+      height: auto;
+      margin-right: 15px;
+      float: left;
+      border-radius: 50%; /* circular image */
+    }
+  </style>
 </head>
 <body>
-  <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <button 
+          type="button" 
+          class="navbar-toggle collapsed" 
+          data-toggle="collapse" 
+          data-target=".navbar-ex1-collapse" 
+          aria-expanded="false"
+        >
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -44,10 +74,11 @@
             <div class="slider round"></div>
           </label>
         </div>
-      </div>
-    </div>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
   </nav>
-  <div class="header-image">
+
+  <div class="header-image" style="margin-top: 70px;">
     <div class="headline" id="top_page">
       <div class="container">
         <h1>Sarath Menon C</h1>
@@ -55,16 +86,16 @@
       </div>
     </div>
   </div>
+
   <div class="container">
     <hr class="featurette-divider" id="about_me">
     <div class="featurette">
       <h3 class="featurette-heading">About Me</h3>
-      
-      <img src="IMG_9385.jpg" 
-     class="img-circle pull-left img-responsive" 
-     alt="About Me Image" 
-     style="max-width: 150px; height: auto; margin-right: 15px;">
-
+      <img 
+        src="IMG_9385.jpg" 
+        class="featurette-image" 
+        alt="About Me Image"
+      />
       <p>
         I am currently working as a <b>Battery Degradation Modelling Engineer</b> at Elysia, UK.  
         My research and engineering interests span across theoretical machine learning, 
@@ -80,6 +111,7 @@
         classification pipelines, and machine learning approaches for bio-inspired systems.  
       </p>
     </div>
+
     <hr class="featurette-divider" id="my_interests">
     <div class="featurette">
       <h3 class="featurette-heading">My Interests</h3>
@@ -94,18 +126,20 @@
         Outside of technical work, I am also interested in exploring robotics, photography, and cross-disciplinary applications of AI.  
       </p>
     </div>
+
     <hr class="featurette-divider" id="publications">
     <div class="featurette">
       <h3 class="featurette-heading">Publications</h3>
       <p>Some of my research contributions include:</p>
       <ul class="project-list">
         <li>
-          <a href="https://doi.org/10.3389/fnins.2022.917196" target="_blank">
+          <a href="https://doi.org/10.3389/fnins.2022.917196" target="_blank" rel="noopener noreferrer">
           The Influence of Neural Activity and Neural Cytoarchitecture on Cerebrovascular Arborization: A Computational Model</a>,  
           <i>Frontiers in Neuroscience, 2022</i>
         </li>
       </ul>
     </div>
+
     <hr class="featurette-divider" id="cv">
     <div class="featurette timeline">
       <h3 class="featurette-heading">CV</h3>
@@ -138,6 +172,7 @@
         </li>
       </ul>
     </div>
+
     <hr class="featurette-divider" id="projects">
     <div class="featurette">
       <h3 class="featurette-heading">Projects</h3>
@@ -151,29 +186,25 @@
           <p>Soft robotic sensing system with vision-based characterization techniques.</p>
         </li>
       </ul>
-      <p>More projects are available on my <a href="https://github.com/s2mc95" target="_blank">GitHub</a>.</p>
+      <p>More projects are available on my <a href="https://github.com/s2mc95" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
     </div>
+
     <hr class="featurette-divider" id="contact">
     <div class="featurette">
       <h3 class="featurette-heading">Contact Me</h3>
-      <ul class="contacts-list">
-        <li>
-          <a href="mailto:sarath2menon@gmail.com">sarath2menon@gmail.com</a> | Phone: +44 7826 220470
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/sarathmenonc" target="_blank">LinkedIn</a>
-        </li>
-        <li>
-          <a href="https://github.com/s2mc95" target="_blank">GitHub</a>
-        </li>
+      <ul class="contacts-list list-unstyled">
+        <li><a href="mailto:sarath2menon@gmail.com">sarath2menon@gmail.com</a> | Phone: +44 7826 220470</li>
+        <li><a href="https://www.linkedin.com/in/sarathmenonc" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/s2mc95" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       </ul>
     </div>
     <hr>
     <footer>
-      <p class="foot-text">© 2025 Sarath Menon C</p>
+      <p class="foot-text text-center">© 2025 Sarath Menon C</p>
     </footer>
   </div>
-  <script src="js/jquery-1.10.2.js"></script>
-  <script src="js/bootstrap.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
