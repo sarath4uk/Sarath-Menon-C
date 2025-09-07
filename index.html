@@ -8,12 +8,29 @@
   <title>Sarath Menon C</title>
   <!-- Bootstrap 3 core CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Custom CSS for the 'One Page Wonder' Template -->
+  <!-- Custom CSS -->
   <link href="css/one-page-wonder.css" rel="stylesheet" />
   <style>
+    /* Default theme background */
+    body {
+      background-color: #ffffff;
+      color: #000;
+    }
+
+    /* Dark theme background */
+    body.dark-theme {
+      background-color: #000000;
+      color: #ddd;
+    }
+    body.dark-theme h1,
+    body.dark-theme h3,
+    body.dark-theme h4 {
+      color: #eee;
+    }
+
     /* Navbar custom colors */
     .navbar-inverse {
-      background-color: #222; /* dark background */
+      background-color: #222;
       border-color: #080808;
     }
     .navbar-inverse .navbar-brand,
@@ -23,24 +40,6 @@
     .navbar-inverse .navbar-nav > li > a:hover,
     .navbar-inverse .navbar-brand:hover {
       color: white;
-    }
-    /* About Me image style */
-    .featurette-image {
-      max-width: 150px;
-      height: auto;
-      margin-right: 15px;
-      float: left;
-      border-radius: 50%; /* circular */
-    }
-    /* Dark theme styles, toggled with .dark-theme on body */
-    body.dark-theme {
-      background-color: #121212;
-      color: #ddd;
-    }
-    body.dark-theme h1,
-    body.dark-theme h3,
-    body.dark-theme h4 {
-      color: #eee;
     }
     body.dark-theme .navbar-inverse {
       background-color: #333;
@@ -54,14 +53,23 @@
     body.dark-theme .navbar-inverse .navbar-brand:hover {
       color: #fff;
     }
-    /* Theme switch slider style */
+
+    /* About Me image style */
+    .featurette-image {
+      max-width: 150px;
+      height: auto;
+      margin-right: 20px;
+      border-radius: 50%;
+    }
+
+    /* Theme switch slider */
     .theme-switch {
       position: relative;
       display: inline-block;
       width: 30px;
       height: 15px;
       margin-left: 10px;
-      margin-top: 20px;
+      margin-top: 15px;
     }
     .theme-switch input {
       display: none;
@@ -80,10 +88,10 @@
     .slider:before {
       position: absolute;
       content: "";
-      height: 13.5px;
-      width: 7px;
-      left: 3px;
-      bottom: 3px;
+      height: 14px;
+      width: 14px;
+      left: 2px;
+      bottom: 1px;
       background-color: white;
       transition: 0.4s;
       border-radius: 50%;
@@ -92,7 +100,7 @@
       background-color: #2196f3;
     }
     input:checked + .slider:before {
-      transform: translateX(21px);
+      transform: translateX(14px);
     }
   </style>
 </head>
@@ -112,6 +120,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
+      </div>
       <div>
         <ul class="nav navbar-nav">
           <li><a href="#about_me">About Me</a></li>
@@ -120,15 +129,15 @@
           <li><a href="#cv">CV</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><div class="theme-button-computer">
-          <label class="theme-switch" title="Toggle Theme Desktop">
-            <input type="checkbox" id="checkbox2" />
-            <div class="slider round"></div>
-          </label>
-          </div></li>
+          <li>
+            <div class="theme-button-computer">
+              <label class="theme-switch" title="Toggle Theme Desktop">
+                <input type="checkbox" id="checkbox2" />
+                <div class="slider round"></div>
+              </label>
+            </div>
+          </li>
         </ul>
-
-
       </div>
     </div>
   </nav>
@@ -144,26 +153,34 @@
 
   <div class="container">
     <hr class="featurette-divider" id="about_me" />
-    <div class="featurette">
+
+    <!-- About Me section -->
+    <div class="featurette row">
       <h3 class="featurette-heading">About Me</h3>
-      <img src="IMG_9385.jpg" class="featurette-image" alt="About Me Image" />
-      <p>
-        I am currently working as a <b>Battery Degradation Modelling Engineer</b> at Elysia, UK.
-        My research and engineering interests span across theoretical machine learning,
-        neuroscience-inspired computation, and applied robotics for healthcare and energy systems.
-      </p>
-      <p>
-        I completed my <b>Master’s in Biorobotics</b> at the University of Bristol, where I focused
-        on brain-computer interfaces and soft robotics, following my undergraduate
-        degree in <b>Electronics and Communication Engineering</b> from CUSAT, India.
-      </p>
-      <p>
-        In past roles, I have developed computational neuroscience models, EEG-based signal
-        classification pipelines, and machine learning approaches for bio-inspired systems.
-      </p>
+      <div class="col-md-3">
+        <img src="IMG_9385.jpg" class="featurette-image img-responsive" alt="About Me Image" />
+      </div>
+      <div class="col-md-9">
+        <p>
+          I am currently working as a <b>Battery Degradation Modelling Engineer</b> at Elysia, UK.
+          My research and engineering interests span across theoretical machine learning,
+          neuroscience-inspired computation, and applied robotics for healthcare and energy systems.
+        </p>
+        <p>
+          I completed my <b>Master’s in Biorobotics</b> at the University of Bristol, where I focused
+          on brain-computer interfaces and soft robotics, following my undergraduate degree in
+          <b>Electronics and Communication Engineering</b> from CUSAT, India.
+        </p>
+        <p>
+          In past roles, I have developed computational neuroscience models, EEG-based signal
+          classification pipelines, and machine learning approaches for bio-inspired systems.
+        </p>
+      </div>
     </div>
 
     <hr class="featurette-divider" id="my_interests" />
+
+    <!-- My Interests neatly below -->
     <div class="featurette">
       <h3 class="featurette-heading">My Interests</h3>
       <h4>My current focus areas include:</h4>
@@ -178,20 +195,21 @@
       </p>
     </div>
 
+    <!-- Publications -->
     <hr class="featurette-divider" id="publications" />
     <div class="featurette">
       <h3 class="featurette-heading">Publications</h3>
       <p>Some of my research contributions include:</p>
       <ul class="project-list">
         <li>
-          <a href="https://doi.org/10.3389/fnins.2022.917196" target="_blank" rel="noopener noreferrer"
-            >The Influence of Neural Activity and Neural Cytoarchitecture on Cerebrovascular Arborization: A Computational Model</a
-          >,
-          <i>Frontiers in Neuroscience, 2022</i>
+          <a href="https://doi.org/10.3389/fnins.2022.917196" target="_blank" rel="noopener noreferrer">
+            The Influence of Neural Activity and Neural Cytoarchitecture on Cerebrovascular Arborization: A Computational Model
+          </a>, <i>Frontiers in Neuroscience, 2022</i>
         </li>
       </ul>
     </div>
 
+    <!-- CV -->
     <hr class="featurette-divider" id="cv" />
     <div class="featurette timeline">
       <h3 class="featurette-heading">CV</h3>
@@ -225,6 +243,7 @@
       </ul>
     </div>
 
+    <!-- Projects -->
     <hr class="featurette-divider" id="projects" />
     <div class="featurette">
       <h3 class="featurette-heading">Projects</h3>
@@ -244,6 +263,7 @@
       </p>
     </div>
 
+    <!-- Contact -->
     <hr class="featurette-divider" id="contact" />
     <div class="featurette">
       <h3 class="featurette-heading">Contact Me</h3>
@@ -265,6 +285,7 @@
         ></iframe>
       </div>
     </div>
+
     <hr />
     <footer>
       <p class="foot-text text-center">© 2025 Sarath Menon C</p>
@@ -278,7 +299,6 @@
   <!-- Theme toggle script -->
   <script>
     function syncThemeSwitches(checked) {
-      document.getElementById("checkbox1").checked = checked;
       document.getElementById("checkbox2").checked = checked;
       if (checked) {
         document.body.classList.add("dark-theme");
@@ -286,18 +306,11 @@
         document.body.classList.remove("dark-theme");
       }
     }
-
-    document.getElementById("checkbox1").addEventListener("change", function () {
-      syncThemeSwitches(this.checked);
-    });
     document.getElementById("checkbox2").addEventListener("change", function () {
       syncThemeSwitches(this.checked);
     });
-
-    // Initialize switches and theme on page load (optional: remember preference using localStorage)
     window.addEventListener("DOMContentLoaded", () => {
-      // Example: Customize for saved preference
-      const darkMode = false; // or retrieve from localStorage
+      const darkMode = false; // default
       syncThemeSwitches(darkMode);
     });
   </script>
