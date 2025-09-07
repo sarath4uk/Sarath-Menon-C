@@ -1,37 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio site of Sarath Menon C">
-  <meta name="author" content="Sarath Menon C">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio site of Sarath Menon C" />
+  <meta name="author" content="Sarath Menon C" />
   <title>Sarath Menon C</title>
   <!-- Bootstrap 3 core CSS -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Custom CSS for the 'One Page Wonder' Template -->
-  <link href="css/one-page-wonder.css" rel="stylesheet">
+  <link href="css/one-page-wonder.css" rel="stylesheet" />
   <style>
-    /* Add this to customize navbar background color */
+    /* Navbar custom colors */
     .navbar-inverse {
       background-color: #222; /* dark background */
       border-color: #080808;
     }
-    .navbar-inverse .navbar-brand, 
-    .navbar-inverse .navbar-nav>li>a {
+    .navbar-inverse .navbar-brand,
+    .navbar-inverse .navbar-nav > li > a {
       color: #9d9d9d;
     }
-    /* Optional: text hover */
-    .navbar-inverse .navbar-nav>li>a:hover,
+    .navbar-inverse .navbar-nav > li > a:hover,
     .navbar-inverse .navbar-brand:hover {
       color: white;
     }
-    /* Adjust image size if needed */
+    /* About Me image style */
     .featurette-image {
       max-width: 150px;
       height: auto;
       margin-right: 15px;
       float: left;
-      border-radius: 50%; /* circular image */
+      border-radius: 50%; /* circular */
+    }
+    /* Dark theme styles, toggled with .dark-theme on body */
+    body.dark-theme {
+      background-color: #121212;
+      color: #ddd;
+    }
+    body.dark-theme h1,
+    body.dark-theme h3,
+    body.dark-theme h4 {
+      color: #eee;
+    }
+    body.dark-theme .navbar-inverse {
+      background-color: #333;
+      border-color: #333;
+    }
+    body.dark-theme .navbar-inverse .navbar-brand,
+    body.dark-theme .navbar-inverse .navbar-nav > li > a {
+      color: #eee;
+    }
+    body.dark-theme .navbar-inverse .navbar-nav > li > a:hover,
+    body.dark-theme .navbar-inverse .navbar-brand:hover {
+      color: #fff;
+    }
+    /* Theme switch slider style */
+    .theme-switch {
+      position: relative;
+      display: inline-block;
+      width: 45px;
+      height: 24px;
+      margin-left: 10px;
+      margin-top: 8px;
+    }
+    .theme-switch input {
+      display: none;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #2196f3;
+    }
+    input:checked + .slider:before {
+      transform: translateX(21px);
     }
   </style>
 </head>
@@ -39,11 +100,11 @@
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <button 
-          type="button" 
-          class="navbar-toggle collapsed" 
-          data-toggle="collapse" 
-          data-target=".navbar-ex1-collapse" 
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target=".navbar-ex1-collapse"
           aria-expanded="false"
         >
           <span class="sr-only">Toggle navigation</span>
@@ -52,13 +113,16 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="#">SMC</a>
+
+        <!-- Theme toggle switches -->
         <div class="theme-button-phone">
-          <label class="theme-switch">
+          <label class="theme-switch" title="Toggle Theme Mobile">
             <input type="checkbox" id="checkbox1" />
             <div class="slider round"></div>
           </label>
         </div>
       </div>
+
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
           <li><a href="#about_me">About Me</a></li>
@@ -68,14 +132,15 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+
         <div class="theme-button-computer">
-          <label class="theme-switch">
+          <label class="theme-switch" title="Toggle Theme Desktop">
             <input type="checkbox" id="checkbox2" />
             <div class="slider round"></div>
           </label>
         </div>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container -->
+      </div>
+    </div>
   </nav>
 
   <div class="header-image" style="margin-top: 70px;">
@@ -88,59 +153,56 @@
   </div>
 
   <div class="container">
-    <hr class="featurette-divider" id="about_me">
+    <hr class="featurette-divider" id="about_me" />
     <div class="featurette">
       <h3 class="featurette-heading">About Me</h3>
-      <img 
-        src="IMG_9385.jpg" 
-        class="featurette-image" 
-        alt="About Me Image"
-      />
+      <img src="IMG_9385.jpg" class="featurette-image" alt="About Me Image" />
       <p>
-        I am currently working as a <b>Battery Degradation Modelling Engineer</b> at Elysia, UK.  
-        My research and engineering interests span across theoretical machine learning, 
-        neuroscience-inspired computation, and applied robotics for healthcare and energy systems.  
+        I am currently working as a <b>Battery Degradation Modelling Engineer</b> at Elysia, UK.
+        My research and engineering interests span across theoretical machine learning,
+        neuroscience-inspired computation, and applied robotics for healthcare and energy systems.
       </p>
       <p>
-        I completed my <b>Master’s in Biorobotics</b> at the University of Bristol, where I focused 
-        on brain-computer interfaces and soft robotics, following my undergraduate 
-        degree in <b>Electronics and Communication Engineering</b> from CUSAT, India.  
+        I completed my <b>Master’s in Biorobotics</b> at the University of Bristol, where I focused
+        on brain-computer interfaces and soft robotics, following my undergraduate
+        degree in <b>Electronics and Communication Engineering</b> from CUSAT, India.
       </p>
       <p>
-        In past roles, I have developed computational neuroscience models, EEG-based signal 
-        classification pipelines, and machine learning approaches for bio-inspired systems.  
+        In past roles, I have developed computational neuroscience models, EEG-based signal
+        classification pipelines, and machine learning approaches for bio-inspired systems.
       </p>
     </div>
 
-    <hr class="featurette-divider" id="my_interests">
+    <hr class="featurette-divider" id="my_interests" />
     <div class="featurette">
       <h3 class="featurette-heading">My Interests</h3>
       <h4>My current focus areas include:</h4>
       <ul>
-        <li> Battery ageing, diagnostics, and modelling for real-world applications</li>
-        <li> EEG signal analysis, brain-computer interfaces, and cognitive load estimation</li>
-        <li> Machine learning approaches for bio-inspired robotics and healthcare systems</li>
-        <li> Generative models (GANs) for biomedical data augmentation</li>
+        <li>Battery ageing, diagnostics, and modelling for real-world applications</li>
+        <li>EEG signal analysis, brain-computer interfaces, and cognitive load estimation</li>
+        <li>Machine learning approaches for bio-inspired robotics and healthcare systems</li>
+        <li>Generative models (GANs) for biomedical data augmentation</li>
       </ul>
       <p>
-        Outside of technical work, I am also interested in exploring robotics, photography, and cross-disciplinary applications of AI.  
+        Outside of technical work, I am also interested in exploring robotics, photography, and cross-disciplinary applications of AI.
       </p>
     </div>
 
-    <hr class="featurette-divider" id="publications">
+    <hr class="featurette-divider" id="publications" />
     <div class="featurette">
       <h3 class="featurette-heading">Publications</h3>
       <p>Some of my research contributions include:</p>
       <ul class="project-list">
         <li>
-          <a href="https://doi.org/10.3389/fnins.2022.917196" target="_blank" rel="noopener noreferrer">
-          The Influence of Neural Activity and Neural Cytoarchitecture on Cerebrovascular Arborization: A Computational Model</a>,  
+          <a href="https://doi.org/10.3389/fnins.2022.917196" target="_blank" rel="noopener noreferrer"
+            >The Influence of Neural Activity and Neural Cytoarchitecture on Cerebrovascular Arborization: A Computational Model</a
+          >,
           <i>Frontiers in Neuroscience, 2022</i>
         </li>
       </ul>
     </div>
 
-    <hr class="featurette-divider" id="cv">
+    <hr class="featurette-divider" id="cv" />
     <div class="featurette timeline">
       <h3 class="featurette-heading">CV</h3>
       <div class="title-wrapper"><h4>Education</h4></div>
@@ -173,7 +235,7 @@
       </ul>
     </div>
 
-    <hr class="featurette-divider" id="projects">
+    <hr class="featurette-divider" id="projects" />
     <div class="featurette">
       <h3 class="featurette-heading">Projects</h3>
       <ul>
@@ -186,10 +248,13 @@
           <p>Soft robotic sensing system with vision-based characterization techniques.</p>
         </li>
       </ul>
-      <p>More projects are available on my <a href="https://github.com/s2mc95" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+      <p>
+        More projects are available on my
+        <a href="https://github.com/s2mc95" target="_blank" rel="noopener noreferrer">GitHub</a>.
+      </p>
     </div>
 
-    <hr class="featurette-divider" id="contact">
+    <hr class="featurette-divider" id="contact" />
     <div class="featurette">
       <h3 class="featurette-heading">Contact Me</h3>
       <ul class="contacts-list list-unstyled">
@@ -197,29 +262,54 @@
         <li><a href="https://www.linkedin.com/in/sarathmenonc" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
         <li><a href="https://github.com/s2mc95" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       </ul>
-
-
       <div class="featurette" id="map_section">
-  <h3 class="featurette-heading">Location Map</h3>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3041.690696893787!2d-1.3140595!3d51.8289366!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDQ5JzA1LjYiTiAxwrAxOCc4Nyc1MC4yIkU!5e0!3m2!1sen!2suk!4v1694120376597!5m2!1sen!2suk"
-    width="600"
-    height="450"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-  ></iframe>
-</div>
-
+        <h3 class="featurette-heading">Location Map</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3041.690696893787!2d-1.3140595!3d51.8289366!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDQ5JzA1LjYiTiAxwrAxOCc4Nyc1MC4yIkU!5e0!3m2!1sen!2suk!4v1694120376597!5m2!1sen!2suk"
+          width="600"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </div>
-    <hr>
+    <hr />
     <footer>
       <p class="foot-text text-center">© 2025 Sarath Menon C</p>
     </footer>
   </div>
 
+  <!-- jQuery and Bootstrap scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Theme toggle script -->
+  <script>
+    function syncThemeSwitches(checked) {
+      document.getElementById("checkbox1").checked = checked;
+      document.getElementById("checkbox2").checked = checked;
+      if (checked) {
+        document.body.classList.add("dark-theme");
+      } else {
+        document.body.classList.remove("dark-theme");
+      }
+    }
+
+    document.getElementById("checkbox1").addEventListener("change", function () {
+      syncThemeSwitches(this.checked);
+    });
+    document.getElementById("checkbox2").addEventListener("change", function () {
+      syncThemeSwitches(this.checked);
+    });
+
+    // Initialize switches and theme on page load (optional: remember preference using localStorage)
+    window.addEventListener("DOMContentLoaded", () => {
+      // Example: Customize for saved preference
+      const darkMode = false; // or retrieve from localStorage
+      syncThemeSwitches(darkMode);
+    });
+  </script>
 </body>
 </html>
